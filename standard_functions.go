@@ -52,6 +52,12 @@ func factorial(n int) int {
     return n * factorial(n-1)
 }
 
+//function map
+var functions = map[string] func(int,int) int{
+    "sum":       func(i1, i2 int) int {return i1+i2},
+    "subtract" : func(i1, i2 int) int {return i1-i2},
+}
+
 func main() {
 	resultadoSuma := sumar(3, 5)
 	fmt.Println("Resultado de sumar 3 y 5:", resultadoSuma)
@@ -80,4 +86,7 @@ func main() {
 
 	resultadoFactorial := factorial(5)
 	fmt.Println("El factorial de 5 es:", resultadoFactorial)
+
+    resultadoMap := functions["sum"](1,2)
+    fmt.Println(resultadoMap) 
 }
